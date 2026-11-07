@@ -31,7 +31,7 @@ export function SiteHeader() {
           className={cn(
             "font-display text-lg font-semibold tracking-tight md:text-xl",
             onHome
-              ? "hero-text-shadow-soft text-white"
+              ? "hero-text-shadow font-semibold text-white"
               : "text-foreground",
           )}
         >
@@ -39,7 +39,7 @@ export function SiteHeader() {
         </Link>
         <nav
           className={cn(
-            "hidden items-center gap-6 text-sm font-medium md:flex",
+            "hidden items-center gap-6 text-sm font-semibold md:flex",
             onHome ? "hero-text-shadow-soft text-white" : "text-muted",
           )}
         >
