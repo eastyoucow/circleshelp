@@ -13,7 +13,19 @@ export function CopyCardButton({ cardNumber, className }: CopyCardButtonProps) {
 
   async function handleCopy() {
     try {
-      await navigator.clipboard.writeText(cardNumber);
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(cardNumber);
+      } else {
+        const textarea = document.createElement("textarea");
+        textarea.value = cardNumber;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+      }
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);
     } catch {

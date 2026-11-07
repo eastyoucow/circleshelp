@@ -1,3 +1,4 @@
+import { CopyTextButton } from "@/components/copy-text-button";
 import { site } from "@/content/site";
 
 export function AboutSection() {
@@ -35,32 +36,41 @@ export function AboutSection() {
                   <p className="mt-1 text-sm leading-relaxed text-muted md:text-base">
                     {step.detail}
                   </p>
+                  {"links" in step && step.links ? (
+                    <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+                      {step.links.map((link) => (
+                        <a
+                          key={link.href}
+                          href={link.href}
+                          {...(link.href.startsWith("http")
+                            ? { target: "_blank", rel: "noreferrer" }
+                            : {})}
+                          className="font-semibold text-accent underline-offset-4 hover:underline"
+                        >
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
+                  ) : null}
                 </div>
               </li>
             ))}
           </ol>
 
-          <div className="mt-8 rounded-2xl border border-border bg-elevated/70 p-5">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
-              Strava description template
-            </p>
-            <pre className="mt-3 whitespace-pre-wrap font-body text-sm leading-relaxed text-foreground">
-              {site.stravaTemplate}
-            </pre>
-            <div className="mt-4 flex flex-wrap gap-3 text-sm">
-              {site.strava.map((person) => (
-                <a
-                  key={person.href}
-                  href={person.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-semibold text-accent underline-offset-4 hover:underline"
-                >
-                  Tag {person.shortName}
-                </a>
-              ))}
+          <CopyTextButton
+            text={site.stravaTemplate}
+            label="Copy Strava description"
+            className="mt-8"
+          >
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+                Strava description template
+              </p>
+              <pre className="mt-3 whitespace-pre-wrap font-body text-sm leading-relaxed text-foreground">
+                {site.stravaTemplate}
+              </pre>
             </div>
-          </div>
+          </CopyTextButton>
         </div>
       </div>
     </section>

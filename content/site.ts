@@ -41,15 +41,35 @@ Run with Circles Help 🙆 ❤️ 🙆 ❤️ 🙆`,
     },
     {
       title: "Tag Zhenya and/or Serzh on Strava",
-      detail: "Mention Circles Help in your activity and use our description template.",
+      detail:
+        "Mention Circles Help in your activity and use our description template.",
+      links: [
+        {
+          label: "Zhenya on Strava",
+          href: "https://strava.app.link/AL1w2vdVk4b",
+        },
+        {
+          label: "Serzh on Strava",
+          href: "https://strava.app.link/3DSZO5swl4b",
+        },
+      ],
     },
     {
       title: "Share a support video",
-      detail: "Send a short video about the initiative to the Circles Help Telegram group.",
+      detail:
+        "Send a short video about the initiative to the Circles Help Telegram group.",
+      links: [
+        {
+          label: "Join Telegram group",
+          href: "https://t.me/+j2yWQ6wA2vc3OGIy",
+        },
+      ],
     },
     {
       title: "Donate if you can",
-      detail: "Use the Evoca form or transfer to our card. All funds support the current campaign.",
+      detail:
+        "Use the Evoca form or transfer to our card. All funds support the current campaign.",
+      links: [{ label: "Go to donate", href: "/#donate" }],
     },
   ],
 } as const;

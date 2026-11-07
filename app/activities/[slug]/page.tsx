@@ -123,10 +123,10 @@ export default async function ActivityPage({ params }: PageProps) {
 
         <div className="mt-14 flex flex-wrap gap-3">
           <Link
-            href="/#donate"
+            href="/#month"
             className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-fg transition hover:brightness-110"
           >
-            Donate to the current campaign
+            See this month&apos;s campaign
           </Link>
           <Link
             href="/#activities"
@@ -135,6 +135,10 @@ export default async function ActivityPage({ params }: PageProps) {
             Back to activities
           </Link>
         </div>
+        <p className="mt-4 text-sm text-muted">
+          This activity is finished. Donations now support the current monthly
+          campaign.
+        </p>
       </div>
     </article>
   );
