@@ -30,7 +30,9 @@ export function SiteHeader() {
           href="/"
           className={cn(
             "font-display text-lg font-semibold tracking-tight md:text-xl",
-            onHome ? "text-white drop-shadow-sm" : "text-foreground",
+            onHome
+              ? "hero-text-shadow-soft text-white"
+              : "text-foreground",
           )}
         >
           {site.name}
@@ -38,7 +40,7 @@ export function SiteHeader() {
         <nav
           className={cn(
             "hidden items-center gap-6 text-sm font-medium md:flex",
-            onHome ? "text-white/90" : "text-muted",
+            onHome ? "hero-text-shadow-soft text-white" : "text-muted",
           )}
         >
           {nav.map((item) => (
@@ -47,7 +49,7 @@ export function SiteHeader() {
               href={item.href}
               className={cn(
                 "transition",
-                onHome ? "hover:text-white" : "hover:text-foreground",
+                onHome ? "hover:text-white/85" : "hover:text-foreground",
               )}
             >
               {item.label}
