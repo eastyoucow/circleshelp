@@ -26,7 +26,7 @@ export const site = {
   stravaTemplate: `My run just raised 1,000 AMD for a good cause 🏃 ❤️
 
 Your next run can do the same
-More info: https://lc.cx/circles-help
+More info: https://circleshelp.vercel.app/
 
 Run with Circles Help 🙆 ❤️ 🙆 ❤️ 🙆`,
   about: [
